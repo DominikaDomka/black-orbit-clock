@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './styles.css';
 
 const SVGTimeWidget = () => {
   const [date, setDate] = useState(new Date());
@@ -85,7 +84,6 @@ const SVGTimeWidget = () => {
         <circle cx={secondDotX} cy={secondDotY} r="2" fill="black" />
       </svg>
 
-      {/* Time and Date display */}
       <div className="time-display">
         <div className="time">
           {formatTime(date)}
