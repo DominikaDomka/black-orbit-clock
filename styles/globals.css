@@ -6,6 +6,7 @@ body, html {
   justify-content: center;
   align-items: center;
   background-color: #f0f0f0;
+  font-family: 'Inter', sans-serif;
 }
 
 .clock-container {
@@ -23,7 +24,6 @@ body, html {
   position: absolute;
   text-align: center;
   z-index: 10;
-  font-family: 'Inter', sans-serif;
   color: #333;
   letter-spacing: 0.5px;
 }
