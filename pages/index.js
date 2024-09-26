@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import './styles.css';
 
 const SVGTimeWidget = () => {
   const [date, setDate] = useState(new Date());
@@ -62,40 +63,38 @@ const SVGTimeWidget = () => {
   });
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="relative w-64 h-64 bg-white rounded-full flex items-center justify-center">
-        <svg width="256" height="256" viewBox="0 0 256 256" className="absolute top-0 left-0 right-0 bottom-0 m-auto">
-          {/* Outermost circle */}
-          <circle cx="128" cy="128" r={outerRadius} fill="none" stroke="black" strokeWidth="1" />
-          {/* Middle circle */}
-          <circle cx="128" cy="128" r={middleRadius} fill="none" stroke="black" strokeWidth="1" />
-          {/* Inner circle */}
-          <circle cx="128" cy="128" r={innerRadius} fill="none" stroke="black" strokeWidth="1" />
-          {/* Hour markers */}
-          {hourMarkers}
-          {/* Circle around the first dot */}
-          <circle cx={firstDotX} cy={firstDotY} r="13" fill="none" stroke="black" strokeWidth="1" />
-          {/* Fourth dot (outermost) */}
-          <circle cx={fourthDotX} cy={fourthDotY} r="12" fill="black" />
-          {/* Third dot (middle) */}
-          <circle cx={thirdDotX} cy={thirdDotY} r="10" fill="black" />
-          {/* First dot (inner) */}
-          <circle cx={firstDotX} cy={firstDotY} r="8" fill="black" />
-          {/* Second dot (innermost) */}
-          <circle cx={secondDotX} cy={secondDotY} r="2" fill="black" />
-        </svg>
+    <div className="clock-container">
+      <svg width="256" height="256" viewBox="0 0 256 256">
+        {/* Outermost circle */}
+        <circle cx="128" cy="128" r={outerRadius} fill="none" stroke="black" strokeWidth="1" />
+        {/* Middle circle */}
+        <circle cx="128" cy="128" r={middleRadius} fill="none" stroke="black" strokeWidth="1" />
+        {/* Inner circle */}
+        <circle cx="128" cy="128" r={innerRadius} fill="none" stroke="black" strokeWidth="1" />
+        {/* Hour markers */}
+        {hourMarkers}
+        {/* Circle around the first dot */}
+        <circle cx={firstDotX} cy={firstDotY} r="13" fill="none" stroke="black" strokeWidth="1" />
+        {/* Fourth dot (outermost) */}
+        <circle cx={fourthDotX} cy={fourthDotY} r="12" fill="black" />
+        {/* Third dot (middle) */}
+        <circle cx={thirdDotX} cy={thirdDotY} r="10" fill="black" />
+        {/* First dot (inner) */}
+        <circle cx={firstDotX} cy={firstDotY} r="8" fill="black" />
+        {/* Second dot (innermost) */}
+        <circle cx={secondDotX} cy={secondDotY} r="2" fill="black" />
+      </svg>
 
-        {/* Time and Date display */}
-        <div className="text-center z-10 absolute">
-          <div className="text-xl font-bold">
-            {formatTime(date)}
-          </div>
-          <div className="text-xs font-semibold">
-            {date.toLocaleDateString('en-US', { weekday: 'long' })}
-          </div>
-          <div className="text-xs">
-            {formatDate(date)}
-          </div>
+      {/* Time and Date display */}
+      <div className="time-display">
+        <div className="time">
+          {formatTime(date)}
+        </div>
+        <div className="day">
+          {date.toLocaleDateString('en-US', { weekday: 'long' })}
+        </div>
+        <div className="date">
+          {formatDate(date)}
         </div>
       </div>
     </div>
