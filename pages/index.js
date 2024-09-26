@@ -58,30 +58,30 @@ const SVGTimeWidget = () => {
     const angle = (i / 12) * 360;
     const x = 128 + middleRadius * Math.cos((angle - 90) * Math.PI / 180);
     const y = 128 + middleRadius * Math.sin((angle - 90) * Math.PI / 180);
-    return <circle key={i} cx={x} cy={y} r="3" fill="black" />;
+    return <circle key={i} cx={x} cy={y} r="3" fill="#333" />;
   });
 
   return (
     <div className="clock-container">
       <svg width="256" height="256" viewBox="0 0 256 256">
         {/* Outermost circle */}
-        <circle cx="128" cy="128" r={outerRadius} fill="none" stroke="black" strokeWidth="1" />
+        <circle cx="128" cy="128" r={outerRadius} fill="none" stroke="#333" strokeWidth="1" />
         {/* Middle circle */}
-        <circle cx="128" cy="128" r={middleRadius} fill="none" stroke="black" strokeWidth="1" />
+        <circle cx="128" cy="128" r={middleRadius} fill="none" stroke="#333" strokeWidth="1" />
         {/* Inner circle */}
-        <circle cx="128" cy="128" r={innerRadius} fill="none" stroke="black" strokeWidth="1" />
+        <circle cx="128" cy="128" r={innerRadius} fill="none" stroke="#333" strokeWidth="1" />
         {/* Hour markers */}
         {hourMarkers}
         {/* Circle around the first dot */}
-        <circle cx={firstDotX} cy={firstDotY} r="13" fill="none" stroke="black" strokeWidth="1" />
+        <circle cx={firstDotX} cy={firstDotY} r="13" fill="none" stroke="#333" strokeWidth="1" />
         {/* Fourth dot (outermost) */}
-        <circle cx={fourthDotX} cy={fourthDotY} r="12" fill="black" />
+        <circle cx={fourthDotX} cy={fourthDotY} r="12" fill="#333" />
         {/* Third dot (middle) */}
-        <circle cx={thirdDotX} cy={thirdDotY} r="10" fill="black" />
+        <circle cx={thirdDotX} cy={thirdDotY} r="10" fill="#333" />
         {/* First dot (inner) */}
-        <circle cx={firstDotX} cy={firstDotY} r="8" fill="black" />
+        <circle cx={firstDotX} cy={firstDotY} r="8" fill="#333" />
         {/* Second dot (innermost) */}
-        <circle cx={secondDotX} cy={secondDotY} r="2" fill="black" />
+        <circle cx={secondDotX} cy={secondDotY} r="2" fill="#333" />
       </svg>
 
       <div className="time-display">
