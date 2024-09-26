@@ -29,17 +29,17 @@ body, html {
 }
 
 .time-display .time {
-  font-size: 1.5rem;
+  font-size: 1.25rem;  /* Reduced from 1.5rem */
   font-weight: 400;
-  margin-bottom: 4px;
+  margin-bottom: 3px;  /* Slightly reduced margin */
 }
 
 .time-display .day,
 .time-display .date {
-  font-size: 0.75rem;
+  font-size: 0.65rem;  /* Reduced from 0.75rem */
   font-weight: 300;
 }
 
 .time-display .day {
-  margin-bottom: 2px;
+  margin-bottom: 1px;  /* Slightly reduced margin */
 }
