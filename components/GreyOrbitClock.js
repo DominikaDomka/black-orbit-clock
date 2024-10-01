@@ -93,7 +93,7 @@ const GreyOrbitClock = () => {
         {/* Day text in the center */}
         <text 
           x={centerX}
-          y={centerY - 22}
+          y={centerY - 15}
           textAnchor="middle" 
           dominantBaseline="middle" 
           fill="#ffffff" 
@@ -106,7 +106,7 @@ const GreyOrbitClock = () => {
         {/* Time text under day */}
         <text 
           x={centerX}
-          y={centerY}
+          y={centerY + 7}
           textAnchor="middle" 
           dominantBaseline="middle" 
           fill="#ffffff" 
@@ -118,7 +118,7 @@ const GreyOrbitClock = () => {
         {/* Date text below time */}
         <text 
           x={centerX}
-          y={centerY + 22}
+          y={centerY + 29}
           textAnchor="middle" 
           dominantBaseline="middle" 
           fill="#dddddd" 
