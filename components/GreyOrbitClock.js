@@ -22,6 +22,10 @@ const GreyOrbitClock = () => {
     return date.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit' });
   };
 
+  const formatTime = (date) => {
+    return date.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+  };
+
   const getWeekNumber = (date) => {
     const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
     const dayNum = d.getUTCDay() || 7;
@@ -97,7 +101,7 @@ const GreyOrbitClock = () => {
         {/* Day text in the center */}
         <text 
           x={centerX}
-          y={centerY - 10}
+          y={centerY - 20}
           textAnchor="middle" 
           dominantBaseline="middle" 
           fill="#ffffff" 
@@ -107,10 +111,22 @@ const GreyOrbitClock = () => {
         >
           {formatDay(date)}
         </text>
-        {/* Date text below day */}
+        {/* Time text under day */}
         <text 
           x={centerX}
-          y={centerY + 10}
+          y={centerY}
+          textAnchor="middle" 
+          dominantBaseline="middle" 
+          fill="#ffffff" 
+          fontSize="16"
+          fontFamily="Arial, Helvetica, sans-serif"
+        >
+          {formatTime(date)}
+        </text>
+        {/* Date text below time */}
+        <text 
+          x={centerX}
+          y={centerY + 20}
           textAnchor="middle" 
           dominantBaseline="middle" 
           fill="#dddddd" 
@@ -122,7 +138,7 @@ const GreyOrbitClock = () => {
         {/* Week number below date */}
         <text 
           x={centerX}
-          y={centerY + 28}
+          y={centerY + 38}
           textAnchor="middle" 
           dominantBaseline="middle" 
           fill="#dddddd" 
