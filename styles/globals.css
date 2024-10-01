@@ -11,8 +11,8 @@ body, html {
 
 .clock-container {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   background-color: transparent;
   border-radius: 50%;
   display: flex;
