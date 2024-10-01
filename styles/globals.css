@@ -5,8 +5,8 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
-  font-family: 'Inter', sans-serif;
+  background-color: #000000;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .clock-container {
@@ -18,28 +18,4 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.time-display {
-  position: absolute;
-  text-align: center;
-  z-index: 10;
-  color: #333;
-  letter-spacing: 0.5px;
-}
-
-.time-display .time {
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin-bottom: 3px;
-}
-
-.time-display .day,
-.time-display .date {
-  font-size: 0.65rem;
-  font-weight: 300;
-}
-
-.time-display .day {
-  margin-bottom: 1px;
 }
