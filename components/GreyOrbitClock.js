@@ -36,13 +36,13 @@ const GreyOrbitClock = () => {
   const milliseconds = date.getMilliseconds();
 
   // Adjusted circle radii
-  const innerRadius = 78;
-  const middleRadius = 125;
-  const outerRadius = 172;
+  const innerRadius = 68;
+  const middleRadius = 109;
+  const outerRadius = 150;
 
   // Center point
-  const centerX = 200;
-  const centerY = 200;
+  const centerX = 175;
+  const centerY = 175;
 
   // First dot (inner circle) - 60 second revolution
   const firstDotAngle = ((seconds * 1000 + milliseconds) / 60000) * 360;
@@ -51,7 +51,7 @@ const GreyOrbitClock = () => {
 
   // Second dot (small circle around first) - 1 second revolution
   const secondDotAngle = (milliseconds / 1000) * 360;
-  const secondDotRadius = 20;
+  const secondDotRadius = 17;
   const secondDotX = firstDotX + secondDotRadius * Math.cos((secondDotAngle - 90) * Math.PI / 180);
   const secondDotY = firstDotY + secondDotRadius * Math.sin((secondDotAngle - 90) * Math.PI / 180);
 
@@ -70,12 +70,12 @@ const GreyOrbitClock = () => {
     const angle = (i / 12) * 360;
     const x = centerX + middleRadius * Math.cos((angle - 90) * Math.PI / 180);
     const y = centerY + middleRadius * Math.sin((angle - 90) * Math.PI / 180);
-    return <circle key={i} cx={x} cy={y} r="5" fill="#bbbbbb" />;
+    return <circle key={i} cx={x} cy={y} r="4" fill="#bbbbbb" />;
   });
 
   return (
     <div className="clock-container">
-      <svg width="400" height="400" viewBox="0 0 400 400">
+      <svg width="350" height="350" viewBox="0 0 350 350">
         {/* Outermost circle */}
         <circle cx={centerX} cy={centerY} r={outerRadius} fill="none" stroke="#cccccc" strokeWidth="1.5" />
         {/* Middle circle */}
@@ -85,23 +85,23 @@ const GreyOrbitClock = () => {
         {/* Hour markers */}
         {hourMarkers}
         {/* Circle around the first dot */}
-        <circle cx={firstDotX} cy={firstDotY} r="20" fill="none" stroke="#999999" strokeWidth="1.5" />
+        <circle cx={firstDotX} cy={firstDotY} r="17" fill="none" stroke="#999999" strokeWidth="1.5" />
         {/* Fourth dot (outermost) */}
-        <circle cx={fourthDotX} cy={fourthDotY} r="19" fill="#cccccc" />
+        <circle cx={fourthDotX} cy={fourthDotY} r="16" fill="#cccccc" />
         {/* Third dot (middle) */}
-        <circle cx={thirdDotX} cy={thirdDotY} r="16" fill="#bbbbbb" />
+        <circle cx={thirdDotX} cy={thirdDotY} r="14" fill="#bbbbbb" />
         {/* First dot (inner) */}
-        <circle cx={firstDotX} cy={firstDotY} r="13" fill="#aaaaaa" />
+        <circle cx={firstDotX} cy={firstDotY} r="11" fill="#aaaaaa" />
         {/* Second dot (innermost) */}
         <circle cx={secondDotX} cy={secondDotY} r="3" fill="#999999" />
         {/* Day text in the center */}
         <text 
           x={centerX}
-          y={centerY - 13}
+          y={centerY - 11}
           textAnchor="middle" 
           dominantBaseline="middle" 
           fill="#ffffff" 
-          fontSize="22" 
+          fontSize="19" 
           fontWeight="bold"
           fontFamily="Arial, Helvetica, sans-serif"
         >
@@ -110,11 +110,11 @@ const GreyOrbitClock = () => {
         {/* Date text below day */}
         <text 
           x={centerX}
-          y={centerY + 13}
+          y={centerY + 11}
           textAnchor="middle" 
           dominantBaseline="middle" 
           fill="#dddddd" 
-          fontSize="19"
+          fontSize="16"
           fontFamily="Arial, Helvetica, sans-serif"
         >
           {formatDate(date)}
@@ -122,11 +122,11 @@ const GreyOrbitClock = () => {
         {/* Week number below date */}
         <text 
           x={centerX}
-          y={centerY + 37}
+          y={centerY + 32}
           textAnchor="middle" 
           dominantBaseline="middle" 
           fill="#dddddd" 
-          fontSize="16"
+          fontSize="14"
           fontFamily="Arial, Helvetica, sans-serif"
         >
           week: {getWeekNumber(date)}
