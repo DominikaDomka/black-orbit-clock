@@ -26,14 +26,6 @@ const GreyOrbitClock = () => {
     return date.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
   };
 
-  const getWeekNumber = (date) => {
-    const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
-    const dayNum = d.getUTCDay() || 7;
-    d.setUTCDate(d.getUTCDate() + 4 - dayNum);
-    const yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
-    return Math.ceil((((d - yearStart) / 86400000) + 1)/7);
-  };
-
   const hours = date.getHours();
   const minutes = date.getMinutes();
   const seconds = date.getSeconds();
@@ -101,7 +93,7 @@ const GreyOrbitClock = () => {
         {/* Day text in the center */}
         <text 
           x={centerX}
-          y={centerY - 20}
+          y={centerY - 22}
           textAnchor="middle" 
           dominantBaseline="middle" 
           fill="#ffffff" 
@@ -126,7 +118,7 @@ const GreyOrbitClock = () => {
         {/* Date text below time */}
         <text 
           x={centerX}
-          y={centerY + 20}
+          y={centerY + 22}
           textAnchor="middle" 
           dominantBaseline="middle" 
           fill="#dddddd" 
@@ -134,18 +126,6 @@ const GreyOrbitClock = () => {
           fontFamily="Arial, Helvetica, sans-serif"
         >
           {formatDate(date)}
-        </text>
-        {/* Week number below date */}
-        <text 
-          x={centerX}
-          y={centerY + 38}
-          textAnchor="middle" 
-          dominantBaseline="middle" 
-          fill="#dddddd" 
-          fontSize="12"
-          fontFamily="Arial, Helvetica, sans-serif"
-        >
-          week: {getWeekNumber(date)}
         </text>
       </svg>
     </div>
