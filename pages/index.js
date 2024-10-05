@@ -1,10 +1,10 @@
 import React from 'react';
-import GreyOrbitClock from '../components/GreyOrbitClock';
+import BlackOrbitClock from '../components/BlackOrbitClock';
 
 const Home = () => {
   return (
     <div>
-      <GreyOrbitClock />
+      <BlackOrbitClock />
     </div>
   );
 };
