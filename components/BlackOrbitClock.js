@@ -59,27 +59,27 @@ const BlackOrbitClock = () => {
     const angle = (i / 12) * 360;
     const x = centerX + middleRadius * Math.cos((angle - 90) * Math.PI / 180);
     const y = centerY + middleRadius * Math.sin((angle - 90) * Math.PI / 180);
-    return <circle key={i} cx={x} cy={y} r="3" fill="#444444" />;
+    return <circle key={i} cx={x} cy={y} r="3" fill="#333333" />;
   });
 
   return (
     <div className="clock-container">
       <svg width="300" height="300" viewBox="0 0 300 300">
-        <circle cx={centerX} cy={centerY} r={outerRadius} fill="none" stroke="#333333" strokeWidth="1.2" />
-        <circle cx={centerX} cy={centerY} r={middleRadius} fill="none" stroke="#444444" strokeWidth="1.2" />
-        <circle cx={centerX} cy={centerY} r={innerRadius} fill="none" stroke="#555555" strokeWidth="1.2" />
+        <circle cx={centerX} cy={centerY} r={outerRadius} fill="none" stroke="#222222" strokeWidth="1.2" />
+        <circle cx={centerX} cy={centerY} r={middleRadius} fill="none" stroke="#333333" strokeWidth="1.2" />
+        <circle cx={centerX} cy={centerY} r={innerRadius} fill="none" stroke="#444444" strokeWidth="1.2" />
         {hourMarkers}
-        <circle cx={firstDotX} cy={firstDotY} r="15" fill="none" stroke="#666666" strokeWidth="1.2" />
-        <circle cx={fourthDotX} cy={fourthDotY} r="14" fill="#333333" />
-        <circle cx={thirdDotX} cy={thirdDotY} r="12" fill="#444444" />
-        <circle cx={firstDotX} cy={firstDotY} r="10" fill="#555555" />
-        <circle cx={secondDotX} cy={secondDotY} r="2.5" fill="#666666" />
+        <circle cx={firstDotX} cy={firstDotY} r="15" fill="none" stroke="#555555" strokeWidth="1.2" />
+        <circle cx={fourthDotX} cy={fourthDotY} r="14" fill="#222222" />
+        <circle cx={thirdDotX} cy={thirdDotY} r="12" fill="#333333" />
+        <circle cx={firstDotX} cy={firstDotY} r="10" fill="#444444" />
+        <circle cx={secondDotX} cy={secondDotY} r="2.5" fill="#555555" />
         <text 
           x={centerX}
           y={centerY - 15}
           textAnchor="middle" 
           dominantBaseline="middle" 
-          fill="#222222" 
+          fill="#111111" 
           fontSize="16" 
           fontWeight="bold"
           fontFamily="Arial, Helvetica, sans-serif"
@@ -91,7 +91,7 @@ const BlackOrbitClock = () => {
           y={centerY + 7}
           textAnchor="middle" 
           dominantBaseline="middle" 
-          fill="#222222" 
+          fill="#111111" 
           fontSize="16"
           fontFamily="Arial, Helvetica, sans-serif"
         >
@@ -102,7 +102,7 @@ const BlackOrbitClock = () => {
           y={centerY + 29}
           textAnchor="middle" 
           dominantBaseline="middle" 
-          fill="#222222" 
+          fill="#111111" 
           fontSize="14"
           fontFamily="Arial, Helvetica, sans-serif"
         >
